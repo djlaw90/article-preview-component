@@ -1,2 +1,144 @@
+:root {
+    /* Color */
+    --white: #FFFFFFF;
+    --grey900: #48556A;
+    --grey500: #6E8098;
+    --grey400: #9DAEC2;
+    --grey200: #ECF2F8;
+
+    /* Spacing */
+    --spacing-0: 0px;
+    --spacing-200: 16px;
+    --spacing-300: 24px;
+    --spacing-400: 32px;
+    --spacing-500: 40px;
+    --spacing-600: 48px;
+    --spacing-700: 56px;
+    --spacing-800: 64px;
+    --spacing-1300: 104px;
+    --spacing-2000: 160px;
+}
+
+
+html, body {
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Manrope", sans-serif;
+    background-color: var(--grey200);
+}
+
+.card {
+    z-index: 1;
+    background-color: white;
+    border-radius: 25px;
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 375px;
+    height: auto;
+    align-items: center;
+}
+
+.card h1 {
+    color: var(--grey900);
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: 0.25px;
+    font-weight: bold;
+}
+
+.card-content-main {
+    color: var(--grey500);
+    font: 13px;
+    line-height: 140%;
+    letter-spacing: 0.12px;
+}
+#drawers-pic {
+    width: 375px;
+    height: auto;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.card-copy-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: var(--spacing-300);
+}
+
+.name-date-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-section {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.author-section img {
+    width: 50px;
+    border-radius: 50px;
+}
+
+
+ .mobile-icon-share {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: var(--grey900);
+    width: 85%;
+    height: 50px;
+    padding: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+ }
+
+ .share-text {
+    display: flex;
+    align-self: center;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--grey400);
+
+ }
+
+ .share-icon {
+    margin-left: auto;
+    padding: 10px;
+ }
+
+ .circle-icon {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #fff;
+}
+  
+
+.icons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.icons img {
+    width: 25px;
+    height: 25px;
+}
+
+/* Footer */
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
