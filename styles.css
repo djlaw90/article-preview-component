@@ -1,6 +1,6 @@
 :root {
     /* Color */
-    --white: #FFFFFFF;
+    --white: #FFFFFF;
     --grey900: #48556A;
     --grey500: #6E8098;
     --grey400: #9DAEC2;
@@ -40,7 +40,6 @@ html, body {
     width: 100%;
     max-width: 375px;
     height: auto;
-    align-items: center;
 }
 
 .card h1 {
@@ -58,7 +57,8 @@ html, body {
     letter-spacing: 0.12px;
 }
 #drawers-pic {
-    width: 375px;
+    width: 100%;
+    max-width: 375px;
     height: auto;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
@@ -67,7 +67,7 @@ html, body {
 .card-copy-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     padding: var(--spacing-300);
 }
 
@@ -76,25 +76,35 @@ html, body {
     flex-direction: column;
 }
 
-.author-section {
+#author-section {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    height: 100px;
+    padding: var(--spacing-200);
+    color: var(--grey900);
+    font-weight: bold;
 }
 
-.author-section img {
+#author-section .creation-date {
+    color: var(--grey500);
+}
+
+#author-section img {
     width: 50px;
     border-radius: 50px;
 }
 
 
- .mobile-icon-share {
+
+#share-section {
     display: flex;
     justify-content: left;
     align-items: center;
     background-color: var(--grey900);
-    width: 85%;
-    height: 50px;
-    padding: 25px;
+    height: 100px;
+    padding: var(--spacing-200);
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
  }
@@ -113,6 +123,7 @@ html, body {
  .share-icon {
     margin-left: auto;
     padding: 10px;
+    cursor: pointer;
  }
 
  .circle-icon {
@@ -128,15 +139,15 @@ html, body {
 
 .icons {
     display: flex;
+    cursor: pointer;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
     gap: 20px;
 }
 
-.icons img {
-    width: 25px;
-    height: 25px;
+.hide {
+    display: none !important;
 }
 
 /* Footer */
