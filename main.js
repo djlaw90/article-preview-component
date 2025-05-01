@@ -1,26 +1,45 @@
-const shareButtons = document.querySelectorAll(".share-icon");
+const shareBtn = document.querySelector('.share-icon');
 const shareSection = document.getElementById("share-section");
 const authorSection = document.getElementById("author-section");
 const bottomSection = document.getElementById("bottom-section");
 const circleAroundShareIcon = document.querySelector(".circle-icon");
 const shareIconSvg = document.getElementById("share-path");
 
+
+document.addEventListener('click', (e) => {
+  if (!shareBtn.contains(e.target) && !shareSection.contains(e.target)) {
+    shareSection.classList.add('hide');
+    shareBtn.classList.toggle('desktop-active');
+    toggleShareIconColor();
+  }
+});
+
+
 const toggleShare = () => {
+  const isDesktop = window.innerWidth >= 975;
   const isAuthorHidden = authorSection.classList.contains("hide");
-  const currentIconColor = shareIconSvg.getAttribute('fill') || '#6E8098';
 
-  authorSection.classList.toggle("hide", !isAuthorHidden);
-  shareSection.classList.toggle("hide", isAuthorHidden);
+  if(!isDesktop) {
+    authorSection.classList.toggle("hide", !isAuthorHidden);
+    shareSection.classList.toggle("hide", isAuthorHidden);
+    circleAroundShareIcon.classList.toggle('mobile-active');
 
-  circleAroundShareIcon.style.backgroundColor = isAuthorHidden
-    ? "var(--grey200)"
-    : "var(--grey500)";
-
-  bottomSection.style.backgroundColor = isAuthorHidden
+    bottomSection.style.backgroundColor = isAuthorHidden
     ? "var(--white)"
     : "var(--grey900)";
 
-    // Toggle SVG color between original and light grey
+  }
+
+  if(isDesktop) {
+    circleAroundShareIcon.classList.toggle('desktop-active');
+    shareSection.classList.toggle("hide");
+  }
+
+  toggleShareIconColor();
+};
+
+const toggleShareIconColor = () => {
+  const currentIconColor = shareIconSvg.getAttribute('fill') || '#6E8098';
   const originalColor = "#6E8098";
   const activeColor = "#ecf0f1";
 
@@ -30,8 +49,7 @@ const toggleShare = () => {
       ? activeColor
       : originalColor
   );
-};
+}
   
-shareButtons.forEach(button => {
-  button.addEventListener("click", toggleShare);
-});
+shareBtn.addEventListener('click', toggleShare);
+
